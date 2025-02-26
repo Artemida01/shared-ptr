@@ -59,7 +59,7 @@ public:
     _deleter(std::exchange(_element, nullptr));
   }
 
-  ~derived_block_element() override = default;
+  ~derived_block_element() override {}
 
   explicit derived_block_element(T* other_elem, Deleter deleter)
       : _element(other_elem)
