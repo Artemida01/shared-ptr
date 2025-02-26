@@ -75,10 +75,10 @@ struct derived_block_full : base_block {
 public:
   void erase() override {
     assert(get_real() == 0);
-    reinterpret_cast<T*>(&_element)->~T(); // std::destroy_at(_element);
+    reinterpret_cast<T*>(&_element)->~T();
   }
 
-  ~derived_block_full() override {} // {}
+  ~derived_block_full() override {}
 
   template <typename... Args>
   explicit derived_block_full(Args&&... args)
