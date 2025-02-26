@@ -10,8 +10,6 @@
 
 struct base_block {
 public:
-  base_block() = default;
-
   virtual ~base_block() = default;
 
   void new_real() noexcept {
@@ -63,8 +61,6 @@ public:
 
   ~derived_block_element() override = default;
 
-  derived_block_element() = default;
-
   explicit derived_block_element(T* other_elem, Deleter deleter)
       : _element(other_elem)
       , _deleter(std::move(deleter)) {}
@@ -83,8 +79,6 @@ public:
   }
 
   ~derived_block_full() override {} // {}
-
-  derived_block_full() = default;
 
   template <typename... Args>
   explicit derived_block_full(Args&&... args)
