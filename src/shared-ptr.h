@@ -11,9 +11,6 @@ public:
   template <typename>
   friend class shared_ptr;
 
-  template <typename U, typename... Args>
-  friend shared_ptr<U> make_shared(Args&&... args);
-
   using element_ptr = T*;
   using element_ref = T&;
   using block_ptr = base_block*;
@@ -151,13 +148,13 @@ public:
     }
   }
 
-private:
-  element_ptr _element{nullptr};
-  block_ptr _control_block{nullptr};
-
   explicit shared_ptr(element_ptr ptr, derived_block_full<T>* block)
       : _element(ptr)
       , _control_block(block) {}
+
+private:
+  element_ptr _element{nullptr};
+  block_ptr _control_block{nullptr};
 };
 
 template <typename LType, typename RType>
