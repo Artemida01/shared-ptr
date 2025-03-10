@@ -67,7 +67,7 @@ public:
 
 private:
   T* _element;
-  Deleter _deleter;
+  [[no_unique_address]] Deleter _deleter;
 };
 
 template <typename T>

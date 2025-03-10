@@ -261,9 +261,8 @@ public:
   }
 
   void swap(weak_ptr& other) noexcept {
-    using std::swap;
-    swap(_element, other._element);
-    swap(_control_block, other._control_block);
+    std::swap(_element, other._element);
+    std::swap(_control_block, other._control_block);
   }
 
   template <typename Y>
