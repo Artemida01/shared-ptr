@@ -4,6 +4,7 @@
 #include <concepts>
 #include <cstddef>
 #include <functional>
+#include <iostream>
 #include <memory>
 #include <type_traits>
 #include <utility>
